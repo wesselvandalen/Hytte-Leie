@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MainPage from './pages/main-page.js';
+import Header from './components/header.js';
 
 export default function App() {
   return (
@@ -8,7 +9,7 @@ export default function App() {
       <div className="app-container">
         <div className="app-wrapper">
           <div className="app-innhold">
-            {/* <Header /> */}
+            <Header />
 
             <div className="main-content">
               <Routes>

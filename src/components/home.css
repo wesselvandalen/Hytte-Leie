@@ -52,7 +52,7 @@
     background-color: transparent;
     border: rgba(255, 255, 255, .4) solid 1px;
     color: white;
-    width: 300px;
+    width: 400px;
 }
 
 .searchbar::placeholder {
