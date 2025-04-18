@@ -1,5 +1,4 @@
 import './header.css';
-import logo from '../assets/logo.png';
 
 export default function Header() {
 
@@ -13,7 +12,8 @@ export default function Header() {
                 <div className="header-dock">
                     <a href="/">Home</a>
                     <a href="/hytter">Hytter</a>
-                    <a href="/"></a>
+                    <a href="/spørsmål">Ofte stilte spørsmål</a>
+                    <a href="/omoss">Om oss</a>
                 </div>
             </div>
         </div>
