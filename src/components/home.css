@@ -3,6 +3,9 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .background-image {
@@ -19,9 +22,39 @@
 
 .home-content {
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
     width: 100%;
     height: 100%;
+    max-width: 1200px;
+    color: white;
 }
 
+.home-title {
+    font-weight: 700;
+    font-size: 42px;
+    margin: 5px 0;
+}
+
+.home-description {
+    margin: 5px 0;
+    font-size: 18px;
+    width: 50%;
+    text-align: center;
+}
+
+.searchbar {
+    font-size: 18px;
+    border-radius: 20px;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: rgba(255, 255, 255, .4) solid 1px;
+    color: white;
+    width: 300px;
+}
+
+.searchbar::placeholder {
+    color: rgba(255, 255, 255, .8);
+}
