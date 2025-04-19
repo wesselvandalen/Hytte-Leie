@@ -1,26 +1,12 @@
 import type { Cabin } from '../model/cabin';
 import './cabin-block.css';
+import { getColorByCategory } from '../service/utils';
 
 interface CabinProps {
     cabin: Cabin;
 }
 
 export default function CabinBlock({ cabin }: CabinProps) {
-
-    const getColorByCategory = (category: string): string => {
-        switch (category.toLowerCase()) {
-            case 'skog': return '#80cc91';
-            case 'fjell': return '#c8d2d0';
-            case 'avsides': return '#de9370';
-            case 'familie': return '#d6de93';
-            case 'innsjø': return '#6dd7c9';
-            case 'romantisk': return '#e5b4e7';
-            case 'luksus': return '#ccaf80';
-            case 'enkel': return '#a7b0a4';
-            default: return '#e7e7e8';
-        }
-    }
-
     return (
         <a className="cabin-container" href={`/hytter/${cabin.id}`}>
             <img src={cabin.images[0]} alt={cabin.title} />
@@ -50,7 +36,7 @@ export default function CabinBlock({ cabin }: CabinProps) {
                     })}
                 </div>
 
-                <p className='cabin-max-guests'>Maks. gjester: {cabin.maxGuests}</p>
+                <p className='cabin-max-guests'>Maks. antall gjester: {cabin.maxGuests}</p>
             </div>
             <p className='cabin-price'>Pris per natt: {cabin.pricePerNight} kr</p>
         </a>
