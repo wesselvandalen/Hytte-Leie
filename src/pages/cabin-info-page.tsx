@@ -3,6 +3,7 @@ import './cabin-info-page.css';
 import { useEffect, useState } from 'react';
 import { getCabinById } from '../service/cabins-service';
 import { getColorByCategory } from '../service/utils';
+import Footer from '../components/footer';
 
 export default function CabinInfoPage() {
     const { cabinId } = useParams();
@@ -62,6 +63,8 @@ export default function CabinInfoPage() {
                     {/* <Calender/> */}
                 </div>
             </div>
+
+            <Footer/>
         </div>
     );
 }
