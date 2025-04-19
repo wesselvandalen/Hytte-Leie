@@ -44,17 +44,40 @@
     text-align: center;
 }
 
+/* Searchbar */
+
 .searchbar {
-    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-radius: 20px;
     margin: 10px 0;
-    padding: 10px 20px;
-    background-color: transparent;
     border: rgba(255, 255, 255, .4) solid 1px;
+    padding: 0 20px;
+}
+
+.searchbar input {
+    font-size: 18px;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 0;
+    background-color: transparent;
     color: white;
     width: 400px;
 }
 
-.searchbar::placeholder {
+.searchbar input::placeholder {
     color: rgba(255, 255, 255, .8);
+}
+
+.searchbar svg {
+    width: 22px;
+    height: 22px;
+    color: rgba(255, 255, 255, .8);
+    cursor: pointer;
+}
+
+.searchbar input:focus {
+    border: none;
+    outline: none;
 }

@@ -15,9 +15,7 @@ export default function Header() {
                 </a>
 
                 <div className="header-dock">
-                    <a style={{ color: aColor }} href="/">Home</a>
                     <a style={{ color: aColor }} href="/hytter">Hytter</a>
-                    <a style={{ color: aColor }} href="/spørsmål">Ofte stilte spørsmål</a>
                     <a style={{ color: aColor }} href="/omoss">Om oss</a>
                     <a style={{ color: aColor }} href="/register">Registrer</a>
                     <a style={{ color: aColor }} href="/login">Log inn</a>

@@ -1,0 +1,36 @@
+.about-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.about-page-content {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+    max-width: 1400px;
+}
+
+.about-page-content h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.about-page-content p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.about-page-content a {
+    text-decoration: none;
+    color: rgb(21, 118, 216);
+}
+
+.about-page-content a:hover {
+    color: rgb(8, 92, 176);
+}

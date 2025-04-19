@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MainPage from './pages/main-page.js';
 import Header from './components/header.js';
 import NotFoundPage from './pages/not-found-page.js'
+import AboutPage from './pages/about-page.js';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
             <div className="main-content">
               <Routes>
                 <Route path="/" element={<MainPage />} />
+                <Route path="/omoss" element={<AboutPage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </div>
