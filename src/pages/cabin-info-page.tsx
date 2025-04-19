@@ -59,6 +59,7 @@ export default function CabinInfoPage() {
 
                 <div className="cabin-calender">
                     <h3 className='cabin-calender-title'>Lyst til å leie denne hytta?</h3>
+                    {/* <Calender/> */}
                 </div>
             </div>
         </div>

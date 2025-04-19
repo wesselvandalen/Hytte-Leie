@@ -74,8 +74,9 @@
 
 .cabin-calender {
     display: flex;
-    align-items: center;
-    justify-content: start;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
     margin-top: 50px;
 }
