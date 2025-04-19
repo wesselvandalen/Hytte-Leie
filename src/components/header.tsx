@@ -6,9 +6,10 @@ export default function Header() {
     const isHomePage : boolean = location.pathname === '/';
     const aColor : string = isHomePage ? '#fff' : '#000';
     const borderBottomColor : string = isHomePage ? 'rgba(255, 255, 255, .1) solid 1px' : 'rgba(0, 0, 0, .1) solid 1px';
+    const backgroundColor : string = isHomePage ? 'transparent' : '#fff';
 
     return (
-        <div className="header-container" style={{ borderBottom: borderBottomColor }}>
+        <div className="header-container" style={{ borderBottom: borderBottomColor, backgroundColor: backgroundColor }}>
             <div className="header-content">
                 <a href="/" className='header-logo' style={{ color: aColor }}>
                     Hytte Leie
