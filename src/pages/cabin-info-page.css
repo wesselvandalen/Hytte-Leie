@@ -35,6 +35,7 @@
 
 .cabin-image {
     width: 45%;
+    height: 250px;
     border-radius: 12px;
     object-fit: cover;
 }
@@ -85,4 +86,41 @@
 .cabin-calender-title {
     font-size: 24px;
     text-align: left;
+}
+
+@media screen and (max-width: 900px) {
+    .cabin-info-top {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .cabin-info-content {
+        width: 90%;
+        justify-content: center;
+        margin-top: 75px;
+    }
+
+    .cabin-info-content img {
+        width: 100%;
+    }
+
+    .cabin-info-top-right {
+        width: 100%;
+    }
+
+    .cabin-info-top-title-tags h3 {
+        font-size: 24px;
+    }
+
+    .cabin-tags {
+        margin-bottom: 6px;
+    }
+
+    .cabin-image {
+        height: 200px;
+    }
+
+    .cabin-calender-title {
+        font-size: 24px;
+    }
 }
