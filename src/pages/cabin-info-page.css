@@ -53,6 +53,11 @@
     margin: 0 0 .5rem 0;
 }
 
+.cabin-info-top-right h4 {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
 .cabin-info-max-guests {
     font-size: 13px;
     margin: 20px 0 10px 0;

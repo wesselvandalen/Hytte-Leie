@@ -44,6 +44,7 @@ export default function CabinInfoPage() {
                         </div>
                         <p className="cabin-description">{cabin.description}</p>
 
+                        <h4>Fasiliteter</h4>
                         <div className="cabin-amenities">
                             {cabin.amenities.map((amenity: string, index: number) => {
                                 return <p key={index}>{amenity}</p>
