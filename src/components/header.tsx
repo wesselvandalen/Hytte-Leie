@@ -19,7 +19,7 @@ export default function Header() {
                     <a style={{ color: aColor }} href="/hytter">Hytter</a>
                     <a style={{ color: aColor }} href="/omoss">Om oss</a>
                     <a style={{ color: aColor }} href="/register">Registrer</a>
-                    <a style={{ color: aColor }} href="/login">Log inn</a>
+                    <a style={{ color: aColor }} href="/login">Logg inn</a>
                 </div>
             </div>
         </div>

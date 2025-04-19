@@ -24,7 +24,7 @@ export default function Footer() {
                                 </div>
                                 <div className="footer-row">
                                     <a href="/register">Registrer</a>
-                                    <a href="/login">Log inn</a>
+                                    <a href="/login">Logg inn</a>
                                 </div>
                             </div>
                         </div>

@@ -7,6 +7,7 @@ import AboutPage from './pages/about-page.js';
 import CabinsPage from './pages/cabins-page.js';
 import CabinInfoPage from './pages/cabin-info-page.js';
 import RegisterPage from './pages/register-page.js';
+import LoginPage from './pages/login-page.js';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
                 <Route path="/hytter" element={<CabinsPage/>} />
                 <Route path="/hytter/:cabinId" element={<CabinInfoPage/>} />
                 <Route path="/register" element={<RegisterPage/>} />
+                <Route path="/login" element={<LoginPage/>} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </div>
