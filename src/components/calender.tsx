@@ -41,6 +41,7 @@ export default function Calendar({ props }: any) {
             return;
         }
         
+        sessionStorage.setItem("cabinId", props.id);
         window.location.assign("/leie-hytta");
     }
 

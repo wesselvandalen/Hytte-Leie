@@ -9,6 +9,8 @@ import CabinInfoPage from './pages/cabin-info-page.js';
 import RegisterPage from './pages/register-page.js';
 import LoginPage from './pages/login-page.js';
 import OrderCabinPage from './pages/order-cabin-page.js';
+import OrderOverviewPage from './pages/order-overview-page.js';
+import SuccesPage from './pages/succes-page.js';
 
 export default function App() {
   return (
@@ -25,6 +27,8 @@ export default function App() {
                 <Route path="/hytter" element={<CabinsPage/>} />
                 <Route path="/hytter/:cabinId" element={<CabinInfoPage/>} />
                 <Route path="/leie-hytta" element={<OrderCabinPage/>} />
+                <Route path="/oversikt" element={<OrderOverviewPage/>} />
+                <Route path="/suksess" element={<SuccesPage/>} />
                 <Route path="/register" element={<RegisterPage/>} />
                 <Route path="/login" element={<LoginPage/>} />
                 <Route path="*" element={<NotFoundPage />} />

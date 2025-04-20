@@ -65,7 +65,7 @@ export default function CabinInfoPage() {
                     <div className="cabin-content">
                         <h3 className='cabin-calender-title'>Lyst til å leie denne hytta?</h3>
                         {user ?
-                            <Calender props={cabin.pricePerNight} />
+                            <Calender props={cabin} />
                             :
                             <p>Du må være pålogget for å kunne bruke kalenderen.</p>
                         }
