@@ -11,6 +11,10 @@ export default function UserBlock({ props }: any) {
 
     const handleProfileClick = () => window.location.assign("/profil");
 
+    const sliceString = (input: string) : string => {
+        return input.length > 12 ? input.slice(0, 11) + '...' : input;
+    }
+
     return (
         <div
             className="user-block-container"
@@ -24,7 +28,7 @@ export default function UserBlock({ props }: any) {
                     className="user-block-image"
                 />
                 <h3 style={{ color: textColor }} className="user-block-name">
-                    {props.displayName}
+                    {sliceString(props.displayName)}
                 </h3>
             </div>
 

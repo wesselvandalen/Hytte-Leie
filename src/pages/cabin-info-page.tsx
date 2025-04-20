@@ -1,13 +1,17 @@
 import { useParams } from 'react-router-dom';
 import './cabin-info-page.css';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { getCabinById } from '../service/cabins-service';
 import { getColorByCategory } from '../service/utils';
 import Footer from '../components/footer';
+import Calender from '../components/calender';
+import { AuthContext } from '../contexts/auth-context';
+import { AuthContextType } from '../model/auth-context';
 
 export default function CabinInfoPage() {
     const { cabinId } = useParams();
     const [cabin, setCabin] = useState<any>();
+    const { user } = useContext(AuthContext) as AuthContextType;
 
     useEffect(() => {
         if (cabinId) handleCabinFetch(cabinId);
@@ -60,7 +64,11 @@ export default function CabinInfoPage() {
 
                 <div className="cabin-calender">
                     <h3 className='cabin-calender-title'>Lyst til å leie denne hytta?</h3>
-                    {/* <Calender/> */}
+                    {user ? 
+                        <Calender props={cabin.pricePerNight} />
+                        :
+                        <p>Du må være pålogget for å kunne bruke kalenderen.</p>
+                    }
                 </div>
             </div>
 
