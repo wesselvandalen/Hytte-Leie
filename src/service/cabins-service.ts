@@ -9,6 +9,12 @@ import cabin7 from '../assets/cabins/cabin7.png';
 import cabin8 from '../assets/cabins/cabin8.png';
 import cabin9 from '../assets/cabins/cabin9.png';
 import cabin10 from '../assets/cabins/cabin10.png';
+import cabin11 from '../assets/cabins/cabin11.png';
+import cabin12 from '../assets/cabins/cabin12.png';
+import cabin13 from '../assets/cabins/cabin13.png';
+import cabin14 from '../assets/cabins/cabin14.png';
+import cabin15 from '../assets/cabins/cabin15.png';
+import cabin16 from '../assets/cabins/cabin16.png';
 
 export const cabins: Cabin[] = [
     {
@@ -120,7 +126,73 @@ export const cabins: Cabin[] = [
         location: 'Setesdal, Agder',
         amenities: ['Vedovn', 'Utetoalett', 'Stjernehimmel'],
         pricePerNight: 500,
-      }
+      },
+      {
+        id: 'cabin-011',
+        images: [cabin11],
+        categories: ['Fjell', 'Romantisk'],
+        title: 'Himmelhytta',
+        description: 'Koselig fjellhytte med peis og utsikt mot stjernehimmelen – ideell for par.',
+        maxGuests: 2,
+        location: 'Beitostølen, Innlandet',
+        amenities: ['Peis', 'Balkong', 'Kjøkken'],
+        pricePerNight: 980,
+      },
+      {
+        id: 'cabin-012',
+        images: [cabin12],
+        categories: ['Innsjø', 'Avsides'],
+        title: 'Skogsvann',
+        description: 'Avsidesliggende hytte ved stille vann med robåt og nydelig soloppgang.',
+        maxGuests: 3,
+        location: 'Femsjøen, Østfold',
+        amenities: ['Robåt', 'Bålplass', 'Terrasse'],
+        pricePerNight: 790,
+      },
+      {
+        id: 'cabin-013',
+        images: [cabin13],
+        categories: ['Skog', 'Familie'],
+        title: 'Bjørkheim',
+        description: 'Familievennlig hytte med natursti og god plass til lek og utforskning.',
+        maxGuests: 5,
+        location: 'Tinn, Telemark',
+        amenities: ['Natursti', 'Kjøkken', 'Wifi'],
+        pricePerNight: 1150,
+      },
+      {
+        id: 'cabin-014',
+        images: [cabin14],
+        categories: ['Luksus', 'Fjell'],
+        title: 'Alpine Luxury',
+        description: 'Moderne luksushytte med alle fasiliteter og ski-in/ski-out i alpinbakken.',
+        maxGuests: 6,
+        location: 'Oppdal, Trøndelag',
+        amenities: ['Jacuzzi', 'Fullt kjøkken', 'Badstu'],
+        pricePerNight: 2400,
+      },
+      {
+        id: 'cabin-015',
+        images: [cabin15],
+        categories: ['Romantisk', 'Innsjø'],
+        title: 'Solglimt',
+        description: 'Liten og idyllisk hytte for to – med privat brygge og fantastisk solnedgang.',
+        maxGuests: 2,
+        location: 'Rødenessjøen, Viken',
+        amenities: ['Brygge', 'Robåt', 'Solnedgang'],
+        pricePerNight: 890,
+      },
+      {
+        id: 'cabin-016',
+        images: [cabin16],
+        categories: ['Skog', 'Enkel'],
+        title: 'Lyngly',
+        description: 'Rustikk hytte midt i lyngheiene – ingen strøm, bare naturens ro.',
+        maxGuests: 3,
+        location: 'Lindesnes, Agder',
+        amenities: ['Vedovn', 'Utetoalett', 'Natursti'],
+        pricePerNight: 550,
+      }    
 ];
 
 export function findCabinsByLocation(location: string) {
