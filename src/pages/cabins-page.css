@@ -36,3 +36,10 @@
     width: 100%;
     gap: 20px;
 }
+
+@media screen and (max-width: 900px) {
+    .cabins-list {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

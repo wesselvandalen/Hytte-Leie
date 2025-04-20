@@ -3,39 +3,31 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import './calender.css';
 
-export default function Calendar({ props } : any) {
-    const [startDate, setStartDate] = useState<string>(turnDateObjectIntoYear(new Date()));
-    const [endDate, setEndDate] = useState<string>(turnDateObjectIntoYear(new Date()));
+export default function Calendar({ props }: any) {
+    const [startDate, setStartDate] = useState<Date>(new Date());
+    const [endDate, setEndDate] = useState<Date>(new Date());
 
-    const handleStartDateChange = (date: Date) =>
-        setStartDate(turnDateObjectIntoYear(date < new Date() ? new Date() : date));
-      
-      const handleEndDateChange = (date: Date) =>
-        setEndDate(turnDateObjectIntoYear(date < new Date() ? new Date() : date));
-      
-
-    function turnDateObjectIntoYear(date: Date): string {
-        const month = date.getUTCMonth() + 1; // months from 1-12
-        const day = date.getUTCDate();
-        const year = date.getUTCFullYear();
-
-        return year + "/" + month + "/" + day;
+    const handleStartDateChange = (date: any) => {
+        if (date) {
+            setStartDate(date < new Date() ? new Date() : date);
+        }
     }
 
-    const calculateDaysBetweenDates = (date1: string, date2: string): number => {
-        if (date1 === '' || date2 === '') return 0;
-
-        const oneDay: number = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-        const firstDate: any = new Date(date1);
-        const secondDate: any = new Date(date2);
-
-        return Math.round(Math.abs((firstDate - secondDate) / oneDay));
+    const handleEndDateChange = (date: any) => {
+        if (date) {
+            setEndDate(date < new Date() ? new Date() : date);
+        }
     }
+
+    const calculateDaysBetweenDates = (date1: Date, date2: Date): number => {
+        const oneDay = 24 * 60 * 60 * 1000;
+        return Math.round(Math.abs((date1.getTime() - date2.getTime()) / oneDay));
+    };
 
     const calculatePriceTotalNight = (): number => {
-        const differenceInDays: number = calculateDaysBetweenDates(startDate, endDate);
+        const differenceInDays = calculateDaysBetweenDates(startDate, endDate);
         return props ? (differenceInDays * Number(props)) : 0;
-    }
+    };
 
     return (
         <>
@@ -56,7 +48,6 @@ export default function Calendar({ props } : any) {
                 </div>
             </div>
             <p>Pris på hele ferien: {calculatePriceTotalNight()} kr</p>
-
         </>
     );
 }
