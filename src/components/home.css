@@ -107,3 +107,29 @@
 .cabin-recommendations a:hover {
     background-color: rgb(235, 235, 235);
 }
+
+@media screen and (max-width: 900px) {
+
+    .home-content {
+        width: 90%;
+        justify-content: start;
+        margin-top: 150px;
+    }
+
+    .home-title {
+        font-size: 32px;
+    }
+
+    .home-description {
+        width: 100%;
+        text-align: left;
+    }
+
+    .searchbar {
+        width: 90%;
+    }
+
+    .cabin-recommendations {
+        width: 90%;
+    }
+}

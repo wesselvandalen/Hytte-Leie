@@ -1,0 +1,41 @@
+import { useLocation } from 'react-router-dom';
+import './user-block.css';
+import { useState } from 'react';
+import { signUserOut } from '../service/auth-service';
+
+export default function UserBlock({ props }: any) {
+    const [isHovered, setIsHovered] = useState<boolean>(false);
+    const location = useLocation();
+    const isHomePage: boolean = location.pathname === '/';
+    const textColor: string = isHomePage ? '#fff' : '#000';
+
+    const handleProfileClick = () => window.location.assign("/profil");
+
+    return (
+        <div
+            className="user-block-container"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <div className="user-block">
+                <img
+                    src={props.photoURL}
+                    alt={props.displayName}
+                    className="user-block-image"
+                />
+                <h3 style={{ color: textColor }} className="user-block-name">
+                    {props.displayName}
+                </h3>
+            </div>
+
+            {isHovered && (
+                <div className="dropdown-menu">
+                    <div className="dropdown-content">
+                        <button className="dropdown-button" onClick={handleProfileClick} >Profile</button>
+                        <button className="dropdown-button" onClick={signUserOut} >Logout</button>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+}
