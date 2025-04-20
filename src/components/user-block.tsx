@@ -9,8 +9,6 @@ export default function UserBlock({ props }: any) {
     const isHomePage: boolean = location.pathname === '/';
     const textColor: string = isHomePage ? '#fff' : '#000';
 
-    const handleProfileClick = () => window.location.assign("/profil");
-
     const sliceString = (input: string) : string => {
         return input.length > 12 ? input.slice(0, 11) + '...' : input;
     }
@@ -35,7 +33,6 @@ export default function UserBlock({ props }: any) {
             {isHovered && (
                 <div className="dropdown-menu">
                     <div className="dropdown-content">
-                        <button className="dropdown-button" onClick={handleProfileClick} >Profile</button>
                         <button className="dropdown-button" onClick={signUserOut} >Logout</button>
                     </div>
                 </div>

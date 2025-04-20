@@ -11,7 +11,6 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    max-width: 1100px;
     margin-top: 100px;
 }
 
@@ -31,6 +30,7 @@
     justify-content: space-between;
     width: 100%;
     gap: 10px;
+    max-width: 1100px;
 }
 
 .cabin-image {
@@ -76,11 +76,22 @@
 
 .cabin-calender {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #fafafa;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.cabin-content {
+    display: flex;
     align-items: start;
     justify-content: center;
     flex-direction: column;
+    max-width: 1100px;
     width: 100%;
-    margin-top: 50px;
+    padding: 30px 0;
 }
 
 .cabin-calender-title {
@@ -92,10 +103,10 @@
     .cabin-info-top {
         flex-direction: column;
         justify-content: center;
+        width: 90%;
     }
 
     .cabin-info-content {
-        width: 90%;
         justify-content: center;
         margin-top: 75px;
     }
@@ -118,6 +129,10 @@
 
     .cabin-image {
         height: 200px;
+    }
+
+    .cabin-content {
+        width: 90%;
     }
 
     .cabin-calender-title {

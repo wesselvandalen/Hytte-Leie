@@ -59,20 +59,22 @@ export default function CabinInfoPage() {
                         <p className='cabin-info-max-guests'>Maks. antall gjester: {cabin.maxGuests}</p>
                         <p className='cabin-info-price'>Pris per natt: {cabin.pricePerNight} kr</p>
                     </div>
-                
+
                 </div>
 
                 <div className="cabin-calender">
-                    <h3 className='cabin-calender-title'>Lyst til å leie denne hytta?</h3>
-                    {user ? 
-                        <Calender props={cabin.pricePerNight} />
-                        :
-                        <p>Du må være pålogget for å kunne bruke kalenderen.</p>
-                    }
+                    <div className="cabin-content">
+                        <h3 className='cabin-calender-title'>Lyst til å leie denne hytta?</h3>
+                        {user ?
+                            <Calender props={cabin.pricePerNight} />
+                            :
+                            <p>Du må være pålogget for å kunne bruke kalenderen.</p>
+                        }
+                    </div>
                 </div>
             </div>
 
-            <Footer/>
+            <Footer />
         </div>
     );
 }
