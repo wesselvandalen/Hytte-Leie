@@ -11,3 +11,7 @@ export const getColorByCategory = (category: string): string => {
         default: return '#e7e7e8';
     }
 }
+
+export const makePriceReadable = (number : number) : string => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}

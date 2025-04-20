@@ -2,8 +2,7 @@ import { useParams } from 'react-router-dom';
 import './cabin-info-page.css';
 import { useContext, useEffect, useState } from 'react';
 import { getCabinById } from '../service/cabins-service';
-import { getColorByCategory } from '../service/utils';
-import Footer from '../components/footer';
+import { getColorByCategory, makePriceReadable } from '../service/utils';
 import Calender from '../components/calender';
 import { AuthContext } from '../contexts/auth-context';
 import { AuthContextType } from '../model/auth-context';
@@ -57,7 +56,7 @@ export default function CabinInfoPage() {
                         </div>
 
                         <p className='cabin-info-max-guests'>Maks. antall gjester: {cabin.maxGuests}</p>
-                        <p className='cabin-info-price'>Pris per natt: {cabin.pricePerNight} kr</p>
+                        <p className='cabin-info-price'>Pris per natt: {makePriceReadable(cabin.pricePerNight)} kr</p>
                     </div>
 
                 </div>
@@ -74,7 +73,6 @@ export default function CabinInfoPage() {
                 </div>
             </div>
 
-            <Footer />
         </div>
     );
 }

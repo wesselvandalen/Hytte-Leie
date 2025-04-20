@@ -33,7 +33,7 @@ export default function UserBlock({ props }: any) {
             {isHovered && (
                 <div className="dropdown-menu">
                     <div className="dropdown-content">
-                        <button className="dropdown-button" onClick={signUserOut} >Logout</button>
+                        <button className="dropdown-button" onClick={signUserOut} >Logg ut</button>
                     </div>
                 </div>
             )}

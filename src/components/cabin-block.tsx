@@ -1,6 +1,6 @@
 import type { Cabin } from '../model/cabin';
 import './cabin-block.css';
-import { getColorByCategory } from '../service/utils';
+import { getColorByCategory, makePriceReadable } from '../service/utils';
 
 interface CabinProps {
     cabin: Cabin;
@@ -38,7 +38,7 @@ export default function CabinBlock({ cabin }: CabinProps) {
 
                 <p className='cabin-max-guests'>Maks. antall gjester: {cabin.maxGuests}</p>
             </div>
-            <p className='cabin-price'>Pris per natt: {cabin.pricePerNight} kr</p>
+            <p className='cabin-price'>Pris per natt: {makePriceReadable(cabin.pricePerNight)} kr</p>
         </a>
     );
 }

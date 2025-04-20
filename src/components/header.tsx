@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../contexts/auth-context';
 import './header.css';
 import { useLocation } from 'react-router-dom';
@@ -9,10 +9,15 @@ export default function Header() {
     const location = useLocation();
     const isHomePage: boolean = location.pathname === '/';
     const { user } = useContext(AuthContext) as AuthContextType;
-      
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     const aColor: string = isHomePage ? '#fff' : '#000';
     const borderBottomColor: string = isHomePage ? 'rgba(255, 255, 255, .1) solid 1px' : 'rgba(0, 0, 0, .1) solid 1px';
     const backgroundColor: string = isHomePage ? 'transparent' : '#fff';
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
     return (
         <div className="header-container" style={{ borderBottom: borderBottomColor, backgroundColor: backgroundColor }}>
@@ -21,9 +26,17 @@ export default function Header() {
                     Hytte Leie
                 </a>
 
-                <div className="header-dock">
-                    <a style={{ color: aColor }} href="/hytter">Hytter</a>
-                    <a style={{ color: aColor }} href="/omoss">Om oss</a>
+                <button className="ham-btn" onClick={toggleMenu}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={aColor} strokeWidth="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+
+                <div className={`header-dock ${isMenuOpen ? 'open' : ''}`}>
+                    <a style={{ color: isHomePage && !isMenuOpen ? '#fff' : '#000' }} href="/hytter">Hytter</a>
+                    <a style={{ color: isHomePage && !isMenuOpen ? '#fff' : '#000' }} href="/omoss">Om oss</a>
 
                     {user ?
                         <>
@@ -31,8 +44,8 @@ export default function Header() {
                         </>
                         :
                         <>
-                            <a style={{ color: aColor }} href="/register">Registrer</a>
-                            <a style={{ color: aColor }} href="/login">Logg inn</a>
+                            <a style={{ color: isHomePage && !isMenuOpen ? '#fff' : '#000' }} href="/register">Registrer</a>
+                            <a style={{ color: isHomePage && !isMenuOpen ? '#fff' : '#000' }} href="/login">Logg inn</a>
                         </>
                     }
                 </div>

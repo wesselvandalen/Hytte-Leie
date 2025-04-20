@@ -1,13 +1,12 @@
 .calender-container {
     display: flex;
-    align-items: start;
-    justify-content: space-between;
-    flex-direction: column;
+    align-items: starst;
+    justify-content: start;
+    gap: 30px;
     width: 100%;
 }
 
 .calender-block {
-    width: 50%;
     margin: 10px 0;
 }
 
@@ -15,4 +14,28 @@
     font-size: 16px;
     font-weight: 500;
     margin: 5px 0;
+}
+
+.order-cabin-btn {
+    padding: 8px 20px;
+    border: rgba(0, 0, 0, .1) solid 1px;
+    font-size: 14px;
+    font-family: "Inter";
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    background-color: #fff;
+}
+
+.order-cabin-btn:hover {
+    cursor: pointer;
+    background-color: #fafafa;
+}
+
+.order-cabin-btn svg {
+    width: 16px;
+    height: 16px;
+    color: rgba(0, 0, 0, .7);
 }

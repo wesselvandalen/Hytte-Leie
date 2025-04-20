@@ -3,7 +3,6 @@ import './cabins-page.css';
 import type { Cabin } from '../model/cabin';
 import CabinBlock from '../components/cabin-block';
 import { cabins as cabinList, findCabinsByLocation } from '../service/cabins-service';
-import Footer from '../components/footer';
 import CabinFilter from '../components/cabins-filter';
 
 export default function CabinsPage() {
@@ -43,7 +42,6 @@ export default function CabinsPage() {
 
             </div>
 
-            <Footer />
         </div>
     );
 }
