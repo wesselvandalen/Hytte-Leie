@@ -137,20 +137,6 @@ export function findCabinsByLocation(location: string) {
   return matchingLocations;
 }
 
-export function findCabinsByMaxNumberOfGuests(numberOfGuests: number) {
-  let matchingLocations: Cabin[] = [];
-
-  for (let i = 0; i < cabins.length; i++) {
-    const currentCabin: Cabin = cabins[i];
-    
-    if (currentCabin.maxGuests === numberOfGuests) {
-      matchingLocations.push(currentCabin);
-    }
-  }
-
-  return matchingLocations;
-}
-
 export function getCabinById(id: string): any {
   for (let i = 0; i < cabins.length; i++) {
     const currentCabin: Cabin = cabins[i];
