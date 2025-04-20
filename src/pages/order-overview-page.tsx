@@ -7,10 +7,13 @@ import { getColorByCategory, makePriceReadable } from "../service/utils";
 export default function OrderOverviewPage() {
     const [cabin, setCabin] = useState<Cabin>();
     const [formData, setFormData] = useState<any>();
+    const [startDate, setStartDate] = useState<string>();
+    const [endDate, setEndDate] = useState<string>();
 
     useEffect(() => {
         handleCabinFetch();
         handleFormDataFetch();
+        handleDatumsFetch();
     }, []);
 
     const handleCabinFetch = () => {
@@ -22,10 +25,27 @@ export default function OrderOverviewPage() {
         const formDataData: string | null = sessionStorage.getItem("formdata");
         if (formDataData) {
             const formDataJSON = JSON.parse(formDataData);
-            console.log(formDataJSON);
             setFormData(formDataJSON);
         }
     }
+
+    const handleDatumsFetch = () => {
+        const datumsData: string | null = sessionStorage.getItem("datums");
+        if (datumsData) {
+            const datumsDataInDataForm: any = JSON.parse(datumsData);
+            setStartDate(turnDateIntoReadableString(datumsDataInDataForm.startDate));
+            setEndDate(turnDateIntoReadableString(datumsDataInDataForm.endDate));
+        }
+    }
+
+    const turnDateIntoReadableString = (date: any): string => {
+        const d = new Date(date);
+        const day = String(d.getDate()).padStart(2, '0');
+        const month = String(d.getMonth() + 1).padStart(2, '0'); 
+        const year = d.getFullYear();
+
+        return `${day}-${month}-${year}`;
+    };
 
     const placeOrder = () => {
         window.location.assign("/suksess");
@@ -100,6 +120,15 @@ export default function OrderOverviewPage() {
                         <p>Antall vokse: {formData.numberOfPeopleAdults}</p>
                         <p>Antall barn: {formData.numberOfPeopleChildren}</p>
                         <p>Antall kjæledyr: {formData.numberOfPeoplePets}</p>
+                    </div>
+                </div>
+
+                <div className="oop-section">
+                    <p>Valgte datoene:</p>
+
+                    <div className="oop-form-data">
+                        <p>Startdato: {startDate}</p>
+                        <p>Sluttdato: {endDate}</p>
                     </div>
                 </div>
 
