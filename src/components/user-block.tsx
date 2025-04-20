@@ -13,6 +13,8 @@ export default function UserBlock({ props }: any) {
         return input.length > 12 ? input.slice(0, 11) + '...' : input;
     }
 
+    const handleBookingButton = () => window.location.assign("/reserveringer");
+
     return (
         <div
             className="user-block-container"
@@ -33,6 +35,7 @@ export default function UserBlock({ props }: any) {
             {isHovered && (
                 <div className="dropdown-menu">
                     <div className="dropdown-content">
+                        <button className="dropdown-button" onClick={handleBookingButton} >Reserveringer</button>
                         <button className="dropdown-button" onClick={signUserOut} >Logg ut</button>
                     </div>
                 </div>

@@ -35,6 +35,12 @@ export default function Calendar({ props }: any) {
             window.alert("Du må minst booke denne hytta for én natt!");
             return;
         } 
+
+        if (endDate < startDate) {
+            window.alert("Sluttdatoen kan ikke være før startdatoen!");
+            return;
+        }
+        
         window.location.assign("/leie-hytta");
     }
 
