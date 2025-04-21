@@ -24,6 +24,17 @@
     margin: 5px 0;
 }
 
+.calender-top {
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+}
+
+.calender-bottom {
+    margin-top: auto;
+    margin-bottom: 45px;
+}
+
 .order-cabin-btn {
     padding: 8px 20px;
     border: rgba(0, 0, 0, .1) solid 1px;

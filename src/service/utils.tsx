@@ -52,3 +52,29 @@ export const getIconByAmenity = (amenity: string): any => {
 export const makePriceReadable = (number: number): string => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
+
+function getPosition(string: string, subString: string, index: number) {
+    return string.split(subString, index).join(subString).length;
+}
+
+export const getFirstTwoSentences = (sentence: string) : string => {
+    const number: number = 2;
+
+    const secondDot = getPosition(sentence, '.', 2);
+    const letterAfterSecondDot = sentence[secondDot + 1];
+
+    // If the letter after the second dot is not a space (f.e. .NET, the letter after the dot (N) is not a ' '),
+    // get the third dot and return the string between those points.
+    if (letterAfterSecondDot !== undefined && letterAfterSecondDot !== ' ') {
+        const thirdDot = getPosition(sentence, '.', 3);
+        return sentence.substring(0, thirdDot + 1);
+    }
+
+    const sentenceRegex = /(?:\b(?:[A-Z][a-z]*|[Ii])\b[^.!?]*[.!?])+/g;
+
+    const matches = sentence.match(sentenceRegex);
+
+    if (!matches) return '';
+
+    return matches.slice(0, number).join(" ").trim();
+}

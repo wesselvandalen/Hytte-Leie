@@ -68,6 +68,7 @@ export default function CabinInfoPage() {
                                 })}
                             </div>
                         </div>
+                        
                     </div>
 
                     <div className="ci-cabin-reserve">
