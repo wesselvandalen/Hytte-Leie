@@ -29,8 +29,8 @@ export default function CabinInfoPage() {
                 <div className="ci-images">
                     <img src={cabin.images[0]} alt="Bilde" className='ci-image-1' />
                     <div>
-                        <img src={cabin.images[1]} alt="bilde" className='ci-image-2' />
-                        <img src={cabin.images[2]} alt="bilde" className='ci-image-2' />
+                        <img src={cabin.images[1]} alt="" className='ci-image-2' />
+                        <img src={cabin.images[2]} alt="" className='ci-image-2' />
                     </div>
                 </div>
 
