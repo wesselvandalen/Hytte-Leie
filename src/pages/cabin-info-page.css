@@ -11,7 +11,8 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    margin-top: 100px;
+    margin: 90px 0 30px 0;
+    max-width: 1400px;
 }
 
 .no-cabin-found {
@@ -22,42 +23,146 @@
     text-align: center;
 }
 
-/* Cabin info */
+/* ci images */
 
-.cabin-info-top {
+.ci-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    height: 500px;
+}
+
+.ci-image-1 {
+    border-radius: 8px;
+    width: 60%;
+    height: 100%;
+}
+
+.ci-images div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 40%;
+    height: fit-content;
+}
+
+.ci-image-2 {
+    width: 100%;
+    border-radius: 8px;
+    height: 240px;
+}
+
+/* ci-cabin-info */
+
+.ci-info {
+    width: 100%;
     display: flex;
     align-items: start;
     justify-content: space-between;
-    width: 100%;
-    gap: 10px;
-    max-width: 1100px;
+    margin-top: 20px;
 }
 
-.cabin-image {
+.ci-cabin-info {
     width: 45%;
-    height: 250px;
-    border-radius: 12px;
-    object-fit: cover;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
 }
 
-.cabin-info-top-right {
-    width: 50%;
+.ci-title-tags {
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    gap: 12px;
 }
 
-.cabin-info-top-title-tags {
+.ci-name {
+    font-weight: 400;
+    font-size: 38px;
+    margin: 10px 0;
+}
+
+.ci-tags {
     display: flex;
     align-items: center;
     gap: 6px;
+    margin-bottom: 3px;
 }
 
-.cabin-info-top-right h3 {
-    font-size: 2rem;
-    margin: 0 0 .5rem 0;
+.ci-tags p {
+    font-size: 13px;
+    padding: 2px 5px;
+    border-radius: 4px;
+    color: #000;
 }
 
-.cabin-info-top-right h4 {
+.ci-amenities {
+    border: solid 1px rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 18px;
+}
+
+.ci-amenities-titel {
+    margin: 10px 0 20px 0;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.line {
+    background-color: rgb(0, 0, 0, .1);
+    width: 100%;
+    height: 1px;
+}
+
+.ci-amenities-grid {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 10px;
+}
+
+.ci-amenities-grid p {
+    color: rgba(0, 0, 0, .7);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ci-amenities-grid p svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ci cabin reserve */
+
+.ci-cabin-reserve {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    width: 38.5%;
+    border-radius: 4px;
+    border: rgba(0, 0, 0, .1) solid 1px;
+}
+
+.ci-cabin-reserve-content {
+    margin: 10px 20px;
+    width: 90%;
+}
+
+.ci-reserve-title {
+    margin: 10px 0;
+    font-weight: 400;
     font-size: 20px;
-    margin: 0 0 10px 0;
 }
 
 .cabin-info-max-guests {

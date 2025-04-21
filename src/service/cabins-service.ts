@@ -25,7 +25,7 @@ export const cabins: Cabin[] = [
         description: 'En koselig tømmerhytte dypt inne i skogen – perfekt for en rolig helg unna byen.',
         maxGuests: 4,
         location: 'Trysil, Innlandet',
-        amenities: ['Peis', 'Vedovn', 'Terrasse'],
+        amenities: ['Peis', 'Strøm', 'Solnedgang'],
         pricePerNight: 950,
       },
       {
@@ -47,7 +47,7 @@ export const cabins: Cabin[] = [
         description: 'Sjarmerende liten hytte rett ved vannet – perfekt for to.',
         maxGuests: 2,
         location: 'Seljord, Telemark',
-        amenities: ['Bålplass', 'Robåt', 'Solnedgang'],
+        amenities: ['Brygge', 'Båt', 'Solnedgang'],
         pricePerNight: 850,
       },
       {
@@ -58,7 +58,7 @@ export const cabins: Cabin[] = [
         description: 'Eksklusiv hytte i nord med store vinduer – perfekt for å se nordlyset.',
         maxGuests: 5,
         location: 'Alta, Troms og Finnmark',
-        amenities: ['Jacuzzi', 'Peis', 'Fullt kjøkken'],
+        amenities: ['Brygge', 'Peis', 'Kjøkken'],
         pricePerNight: 2000,
       },
       {
@@ -69,7 +69,7 @@ export const cabins: Cabin[] = [
         description: 'Enkel og sjarmerende hytte omringet av grantrær – tilbake til naturen.',
         maxGuests: 3,
         location: 'Eidsvoll, Akershus',
-        amenities: ['Vedovn', 'Utetoalett', 'Natursti'],
+        amenities: ['Peis', 'Wifi', 'Turstier'],
         pricePerNight: 600,
       },
       {
@@ -91,7 +91,7 @@ export const cabins: Cabin[] = [
         description: 'Familievennlig hytte ved innsjø med god plass og kort vei til badestrand.',
         maxGuests: 6,
         location: 'Norefjell, Viken',
-        amenities: ['Båt', 'Grillplass', 'Wifi'],
+        amenities: ['Båt', 'Strøm', 'Wifi'],
         pricePerNight: 1250,
       },
       {
@@ -102,7 +102,7 @@ export const cabins: Cabin[] = [
         description: 'Eksklusiv og romantisk hytte med jacuzzi og utsikt over fjellene.',
         maxGuests: 2,
         location: 'Geiranger, Møre og Romsdal',
-        amenities: ['Jacuzzi', 'Peis', 'Privat terrasse'],
+        amenities: ['Badstu', 'Peis', 'Stjernehimmel'],
         pricePerNight: 2200,
       },
       {
@@ -113,7 +113,7 @@ export const cabins: Cabin[] = [
         description: 'Unik tretopphytte midt i skogen – en spennende opplevelse for hele familien.',
         maxGuests: 5,
         location: 'Hurdal, Akershus',
-        amenities: ['Tretopptur', 'Kjøkken', 'Terrasse'],
+        amenities: ['Strøm', 'Kjøkken', 'Båt'],
         pricePerNight: 1350,
       },
       {
@@ -124,7 +124,7 @@ export const cabins: Cabin[] = [
         description: 'Minimalistisk hytte uten strøm og vann – perfekt for å koble helt av.',
         maxGuests: 2,
         location: 'Setesdal, Agder',
-        amenities: ['Vedovn', 'Utetoalett', 'Stjernehimmel'],
+        amenities: ['Peis', 'Solnedgang', 'Stjernehimmel'],
         pricePerNight: 500,
       },
       {
@@ -135,7 +135,7 @@ export const cabins: Cabin[] = [
         description: 'Koselig fjellhytte med peis og utsikt mot stjernehimmelen – ideell for par.',
         maxGuests: 2,
         location: 'Beitostølen, Innlandet',
-        amenities: ['Peis', 'Balkong', 'Kjøkken'],
+        amenities: ['Peis', 'Wifi', 'Kjøkken'],
         pricePerNight: 980,
       },
       {
@@ -146,7 +146,7 @@ export const cabins: Cabin[] = [
         description: 'Avsidesliggende hytte ved stille vann med robåt og nydelig soloppgang.',
         maxGuests: 3,
         location: 'Femsjøen, Østfold',
-        amenities: ['Robåt', 'Bålplass', 'Terrasse'],
+        amenities: ['Båt', 'Stjernehimmel', 'Solnedgang'],
         pricePerNight: 790,
       },
       {
@@ -157,7 +157,7 @@ export const cabins: Cabin[] = [
         description: 'Familievennlig hytte med natursti og god plass til lek og utforskning.',
         maxGuests: 5,
         location: 'Tinn, Telemark',
-        amenities: ['Natursti', 'Kjøkken', 'Wifi'],
+        amenities: ['Turstier', 'Kjøkken', 'Wifi'],
         pricePerNight: 1150,
       },
       {
@@ -168,7 +168,7 @@ export const cabins: Cabin[] = [
         description: 'Moderne luksushytte med alle fasiliteter og ski-in/ski-out i alpinbakken.',
         maxGuests: 6,
         location: 'Oppdal, Trøndelag',
-        amenities: ['Jacuzzi', 'Fullt kjøkken', 'Badstu'],
+        amenities: ['Turstier', 'Kjøkken', 'Badstu'],
         pricePerNight: 2400,
       },
       {
@@ -179,7 +179,7 @@ export const cabins: Cabin[] = [
         description: 'Liten og idyllisk hytte for to – med privat brygge og fantastisk solnedgang.',
         maxGuests: 2,
         location: 'Rødenessjøen, Viken',
-        amenities: ['Brygge', 'Robåt', 'Solnedgang'],
+        amenities: ['Brygge', 'Båt', 'Solnedgang'],
         pricePerNight: 890,
       },
       {
@@ -190,7 +190,7 @@ export const cabins: Cabin[] = [
         description: 'Rustikk hytte midt i lyngheiene – ingen strøm, bare naturens ro.',
         maxGuests: 3,
         location: 'Lindesnes, Agder',
-        amenities: ['Vedovn', 'Utetoalett', 'Natursti'],
+        amenities: ['Peis', 'Strøm', 'Turstier'],
         pricePerNight: 550,
       }    
 ];

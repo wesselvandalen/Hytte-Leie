@@ -1,13 +1,20 @@
 .calender-container {
     display: flex;
-    align-items: starst;
+    align-items: start;
     justify-content: start;
-    gap: 30px;
+    flex-direction: column;
+    gap: 10px;
     width: 100%;
 }
 
 .calender-block {
-    margin: 10px 0;
+    margin: 10px 0 0 0;
+}
+
+.calender-block input {
+    border: rgba(0, 0, 0, .1) solid 1px;
+    padding: 4px 6px;
+    border-radius: 4px;
 }
 
 .calender-block h3 {
@@ -20,8 +27,10 @@
     padding: 8px 20px;
     border: rgba(0, 0, 0, .1) solid 1px;
     font-size: 14px;
+    width: 200px;
     font-family: "Inter";
     border-radius: 4px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;

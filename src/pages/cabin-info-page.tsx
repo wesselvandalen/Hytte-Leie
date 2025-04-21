@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import './cabin-info-page.css';
 import { useContext, useEffect, useState } from 'react';
 import { getCabinById } from '../service/cabins-service';
-import { getColorByCategory, makePriceReadable } from '../service/utils';
+import { getColorByCategory, getIconByAmenity, makePriceReadable } from '../service/utils';
 import Calender from '../components/calender';
 import { AuthContext } from '../contexts/auth-context';
 import { AuthContextType } from '../model/auth-context';
@@ -26,14 +26,20 @@ export default function CabinInfoPage() {
         <div className="cabin-info-container">
             <div className="cabin-info-content">
 
-                <div className="cabin-info-top">
-                    <img src={cabin.images[0]} alt={cabin.title} className="cabin-image" />
+                <div className="ci-images">
+                    <img src={cabin.images[0]} alt="Bilde" className='ci-image-1' />
+                    <div>
+                        <img src={cabin.images[1]} alt="bilde" className='ci-image-2' />
+                        <img src={cabin.images[2]} alt="bilde" className='ci-image-2' />
+                    </div>
+                </div>
 
-                    <div className="cabin-info-top-right">
+                <div className="ci-info">
+                    <div className="ci-cabin-info">
 
-                        <div className="cabin-info-top-title-tags">
-                            <h3>{cabin.title}</h3>
-                            <div className="cabin-tags">
+                        <div className="ci-title-tags">
+                            <h3 className='ci-name'>{cabin.title}</h3>
+                            <div className="ci-tags">
                                 {cabin.categories.map((tag: string, index: number) => {
                                     return <p style={{ backgroundColor: getColorByCategory(tag) }} key={index}>{tag}</p>
                                 })}
@@ -46,33 +52,40 @@ export default function CabinInfoPage() {
                             </svg>
                             <p>{cabin.location}</p>
                         </div>
-                        <p className="cabin-description">{cabin.description}</p>
 
-                        <h4>Fasiliteter</h4>
-                        <div className="cabin-amenities">
-                            {cabin.amenities.map((amenity: string, index: number) => {
-                                return <p key={index}>{amenity}</p>
-                            })}
+                        <p className='cabin-description'>{cabin.description}</p>
+
+                        <div className="ci-amenities">
+                            <h3 className='ci-amenities-titel'>Fasiliteter</h3>
+                            <div className="line" />
+
+                            <div className="ci-amenities-grid">
+                                {cabin.amenities.map((amenity: string, index: number) => {
+                                    return <p key={index}>
+                                        {getIconByAmenity(amenity)}
+                                        {amenity}    
+                                    </p>
+                                })}
+                            </div>
                         </div>
+                    </div>
 
-                        <p className='cabin-info-max-guests'>Maks. antall gjester: {cabin.maxGuests}</p>
-                        <p className='cabin-info-price'>Pris per natt: {makePriceReadable(cabin.pricePerNight)} kr</p>
+                    <div className="ci-cabin-reserve">
+                        <div className="ci-cabin-reserve-content">
+                            <h3 className='ci-reserve-title'>Reserver denne hytta</h3>
+                            <div className="line"/>
+
+                            {user ?
+                                <Calender props={cabin} />
+                                :
+                                <p>Du må være pålogget for å kunne bruke kalenderen.</p>
+                            }
+                        </div>
                     </div>
 
                 </div>
 
-                <div className="cabin-calender">
-                    <div className="cabin-content">
-                        <h3 className='cabin-calender-title'>Lyst til å leie denne hytta?</h3>
-                        {user ?
-                            <Calender props={cabin} />
-                            :
-                            <p>Du må være pålogget for å kunne bruke kalenderen.</p>
-                        }
-                    </div>
-                </div>
             </div>
-
         </div>
     );
 }
