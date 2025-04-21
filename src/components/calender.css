@@ -5,6 +5,7 @@
     flex-direction: column;
     gap: 10px;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .calender-block {
@@ -27,7 +28,7 @@
     padding: 8px 20px;
     border: rgba(0, 0, 0, .1) solid 1px;
     font-size: 14px;
-    width: 200px;
+    width: 100%;
     font-family: "Inter";
     border-radius: 4px;
     margin-bottom: 10px;
@@ -47,4 +48,11 @@
     width: 16px;
     height: 16px;
     color: rgba(0, 0, 0, .7);
+}
+
+.calender-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }

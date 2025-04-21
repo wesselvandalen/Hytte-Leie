@@ -64,7 +64,11 @@ export default function Calendar({ props }: any) {
                     />
                 </div>
             </div>
-            <p>Prisen på {calculateDaysBetweenDates()} {calculateDaysBetweenDates() === 1 ? "natt" : "netter"}: {makePriceReadable(calculatePriceTotalNight())} kr</p>
+
+            <div className="line"></div>
+            <p className="calender-price"><span>Pris per natt:</span><span>{makePriceReadable(props.pricePerNight)} kr</span></p>
+            <p className="calender-price"><span>Antall dager:</span><span>{calculateDaysBetweenDates()} dag{calculateDaysBetweenDates() === 1 ? '' : 'er'}</span></p>
+            <p className="calender-price"><span>Totalprisen:</span><span>{makePriceReadable(calculatePriceTotalNight())} kr</span></p>
 
             <button className="order-cabin-btn" onClick={handleorderCabinButton}>
                 Bestill hytta

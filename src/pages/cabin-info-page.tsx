@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import './cabin-info-page.css';
 import { useContext, useEffect, useState } from 'react';
 import { getCabinById } from '../service/cabins-service';
-import { getColorByCategory, getIconByAmenity, makePriceReadable } from '../service/utils';
+import { getColorByCategory, getIconByAmenity } from '../service/utils';
 import Calender from '../components/calender';
 import { AuthContext } from '../contexts/auth-context';
 import { AuthContextType } from '../model/auth-context';

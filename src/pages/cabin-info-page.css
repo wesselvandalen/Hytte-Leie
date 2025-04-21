@@ -147,16 +147,16 @@
 
 .ci-cabin-reserve {
     display: flex;
-    align-items: start;
+    align-items: center;
     flex-direction: column;
-    width: 38.5%;
+    width: 30%;
     border-radius: 4px;
     border: rgba(0, 0, 0, .1) solid 1px;
 }
 
 .ci-cabin-reserve-content {
-    margin: 10px 20px;
-    width: 90%;
+    margin: 5px 10px;
+    width: 95%;
 }
 
 .ci-reserve-title {
