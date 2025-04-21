@@ -40,6 +40,11 @@ export default function OrderCabinPage() {
             return;
         }
 
+        if (formData.name === '' || formData.address === '' || formData.email === '' || formData.phone === '') {
+            window.alert("Fyll inn personsdetaljene dine for å kunne fortsette.");
+            return;
+        }
+
         sessionStorage.setItem("formdata", JSON.stringify(formData));
         window.location.assign("/oversikt");
     };

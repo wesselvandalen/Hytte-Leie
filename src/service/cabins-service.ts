@@ -19,7 +19,7 @@ import cabin16 from '../assets/cabins/cabin16.png';
 export const cabins: Cabin[] = [
     {
         id: 'cabin-001',
-        images: [cabin1],
+        images: [cabin1, cabin4, cabin11],
         categories: ['Skog', 'Avsides'],
         title: 'Skogro Hytte',
         description: 'En koselig tømmerhytte dypt inne i skogen – perfekt for en rolig helg unna byen.',

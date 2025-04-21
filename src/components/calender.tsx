@@ -27,7 +27,7 @@ export default function Calendar({ props }: any) {
 
     const calculatePriceTotalNight = (): number => {
         const differenceInDays = calculateDaysBetweenDates();
-        return props ? (differenceInDays * Number(props)) : 0;
+        return props ? (differenceInDays * Number(props.pricePerNight)) : 0;
     };
 
     const handleorderCabinButton = () => {
@@ -41,7 +41,7 @@ export default function Calendar({ props }: any) {
             return;
         }
         
-        sessionStorage.setItem("datums", JSON.stringify({ startDate, endDate }));
+        sessionStorage.setItem("datums", JSON.stringify({ startDate, endDate, 'pricePerNight': props.pricePerNight, 'numberOfDays': calculateDaysBetweenDates() }));
         sessionStorage.setItem("cabinId", props.id);
         window.location.assign("/leie-hytta");
     }

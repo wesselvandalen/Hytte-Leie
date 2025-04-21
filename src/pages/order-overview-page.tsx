@@ -9,6 +9,7 @@ export default function OrderOverviewPage() {
     const [formData, setFormData] = useState<any>();
     const [startDate, setStartDate] = useState<string>();
     const [endDate, setEndDate] = useState<string>();
+    const [days, setDays] = useState(0);
 
     useEffect(() => {
         handleCabinFetch();
@@ -35,6 +36,7 @@ export default function OrderOverviewPage() {
             const datumsDataInDataForm: any = JSON.parse(datumsData);
             setStartDate(turnDateIntoReadableString(datumsDataInDataForm.startDate));
             setEndDate(turnDateIntoReadableString(datumsDataInDataForm.endDate));
+            setDays(datumsDataInDataForm.numberOfDays)
         }
     }
 
@@ -129,6 +131,14 @@ export default function OrderOverviewPage() {
                     <div className="oop-form-data">
                         <p>Startdato: {startDate}</p>
                         <p>Sluttdato: {endDate}</p>
+                        <p>Antall netter: {days}</p>
+                    </div>
+                </div>
+
+                <div className="oop-section">
+                    <p>Totalpris</p>
+                    <div className="oop-form-data">
+                        <p>{makePriceReadable(cabin.pricePerNight * days)} kr</p>
                     </div>
                 </div>
 
