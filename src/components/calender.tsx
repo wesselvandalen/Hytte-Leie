@@ -37,12 +37,12 @@ export default function Calendar({ props }: any) {
         if (calculateDaysBetweenDates() === 0) {
             setNotificationMessage("Du må minst booke denne hytta for én natt!");
             setShowNotification(true);
-            // window.alert("Du må minst booke denne hytta for én natt!");
             return;
         }
 
         if (endDate < startDate) {
-            window.alert("Sluttdatoen kan ikke være før startdatoen!");
+            setNotificationMessage("Sluttdatoen kan ikke være før startdatoen!");
+            setShowNotification(true);
             return;
         }
 

@@ -7,23 +7,12 @@
 
 .about-page-content {
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 100px;
     max-width: 1100px;
-}
-
-.about-page-content h3 {
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-.about-page-content p {
-    font-size: 16px;
-    margin: 10px 0;
 }
 
 .about-page-content a {

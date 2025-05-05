@@ -248,12 +248,12 @@
     }
 
     .ci-amenities-grid {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        flex-wrap: wrap;
+        gap: 20px;
     }
 
     .ci-amenities-grid p {
-        margin: 5px 0;
+        margin: 10px 0;
     }
 
     .cabin-info-content img {

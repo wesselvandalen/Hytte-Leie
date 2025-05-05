@@ -45,21 +45,22 @@
     border-radius: 4px;
     margin-bottom: 10px;
     display: flex;
+    color: #fff;
     justify-content: center;
     align-items: center;
     gap: 6px;
-    background-color: #fff;
+    background-color: #000;
 }
 
 .order-cabin-btn:hover {
     cursor: pointer;
-    background-color: #fafafa;
+    background-color: #242424;
 }
 
 .order-cabin-btn svg {
     width: 16px;
     height: 16px;
-    color: rgba(0, 0, 0, .7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .calender-price {
