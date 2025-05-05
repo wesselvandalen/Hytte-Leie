@@ -3,10 +3,13 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import './calender.css';
 import { makePriceReadable } from "../service/utils";
+import Notification from "./notification";
 
 export default function Calendar({ props }: any) {
     const [startDate, setStartDate] = useState<Date>(new Date());
     const [endDate, setEndDate] = useState<Date>(new Date());
+    const [showNotification, setShowNotification] = useState(false);
+    const [notificationMessage, setNotificationMessage] = useState('');
 
     const handleStartDateChange = (date: any) => {
         if (date) {
@@ -32,7 +35,9 @@ export default function Calendar({ props }: any) {
 
     const handleorderCabinButton = () => {
         if (calculateDaysBetweenDates() === 0) {
-            window.alert("Du må minst booke denne hytta for én natt!");
+            setNotificationMessage("Du må minst booke denne hytta for én natt!");
+            setShowNotification(true);
+            // window.alert("Du må minst booke denne hytta for én natt!");
             return;
         }
 
@@ -49,6 +54,12 @@ export default function Calendar({ props }: any) {
     return (
         <div className="calender-top">
             <div className="calender-container">
+                {showNotification && (
+                    <Notification
+                        message={notificationMessage}
+                        onClose={() => setShowNotification(false)}
+                    />
+                )}
                 <div className="calender-block">
                     <h3>Velg en startdato</h3>
                     <DatePicker

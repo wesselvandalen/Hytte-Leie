@@ -63,18 +63,18 @@ export default function CabinInfoPage() {
                                 {cabin.amenities.map((amenity: string, index: number) => {
                                     return <p key={index}>
                                         {getIconByAmenity(amenity)}
-                                        {amenity}    
+                                        {amenity}
                                     </p>
                                 })}
                             </div>
                         </div>
-                        
+
                     </div>
 
                     <div className="ci-cabin-reserve">
                         <div className="ci-cabin-reserve-content">
                             <h3 className='ci-reserve-title'>Reserver denne hytta</h3>
-                            <div className="line"/>
+                            <div className="line" />
 
                             {user ?
                                 <Calender props={cabin} />
