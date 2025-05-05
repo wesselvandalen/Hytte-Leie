@@ -57,9 +57,7 @@ function getPosition(string: string, subString: string, index: number) {
     return string.split(subString, index).join(subString).length;
 }
 
-export const getFirstTwoSentences = (sentence: string) : string => {
-    const number: number = 2;
-
+export const getFirstXSentences = (sentence: string, number: number) : string => {
     const secondDot = getPosition(sentence, '.', 2);
     const letterAfterSecondDot = sentence[secondDot + 1];
 

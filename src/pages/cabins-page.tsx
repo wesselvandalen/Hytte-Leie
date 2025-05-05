@@ -29,15 +29,19 @@ export default function CabinsPage() {
                 <h3 className='cp-title'>Fantastiske hytter, rimelige priser</h3>
                 <p className='cp-description'>Unn deg en pause – naturen er bare et klikk unna.</p>
 
-                <CabinFilter
-                    location={location}
-                    setLocation={setLocation}
-                />
-
-                <div className="cabins-list">
-                    {cabins.map((cabin: Cabin) => {
-                        return <CabinBlock key={cabin.id} cabin={cabin} />
-                    })}
+                <div className="cabin-innhold">
+                    <div className="cabin-filters">
+                        <h3 className='cabin-filters-title'>Filtre</h3>
+                        <CabinFilter
+                            location={location}
+                            setLocation={setLocation}
+                        />
+                    </div>
+                    <div className="cabins-list">
+                        {cabins.map((cabin: Cabin) => {
+                            return <CabinBlock key={cabin.id} cabin={cabin} />
+                        })}
+                    </div>
                 </div>
 
             </div>

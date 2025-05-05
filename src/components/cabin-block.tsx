@@ -1,6 +1,6 @@
 import type { Cabin } from '../model/cabin';
 import './cabin-block.css';
-import { getColorByCategory, getFirstTwoSentences, makePriceReadable } from '../service/utils';
+import { getColorByCategory, getFirstXSentences, makePriceReadable } from '../service/utils';
 
 interface CabinProps {
     cabin: Cabin;
@@ -28,13 +28,13 @@ export default function CabinBlock({ cabin }: CabinProps) {
                     <p>{cabin.location}</p>
                 </div>
 
-                <p className='cabin-description'>{getFirstTwoSentences(cabin.description)}</p>
+                <p className='cabin-description'>{getFirstXSentences(cabin.description, 1)}</p>
 
-                <div className="cabin-amenities">
+                {/* <div className="cabin-amenities">
                     {cabin.amenities.map((amenity: string, index: number) => {
                         return <p key={index}>{amenity}</p>
                     })}
-                </div>
+                </div> */}
 
                 <p className='cabin-max-guests'>Maks. antall gjester: {cabin.maxGuests}</p>
             </div>

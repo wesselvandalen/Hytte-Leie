@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: start;
     border-radius: 4px;
-    margin-top: -20px;
+    width: 100%;
 }
 
 .filter-box-content {

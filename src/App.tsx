@@ -11,8 +11,13 @@ import LoginPage from './pages/login-page.js';
 import OrderCabinPage from './pages/order-cabin-page.js';
 import OrderOverviewPage from './pages/order-overview-page.js';
 import SuccesPage from './pages/succes-page.js';
+import { AuthContext } from './contexts/auth-context.js';
+import { useContext } from 'react';
+import { AuthContextType } from './model/auth-context.js';
 
 export default function App() {
+  const { user } = useContext(AuthContext) as AuthContextType;
+
   return (
     <Router>
       <div className="app-container">
@@ -24,13 +29,19 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/omoss" element={<AboutPage />} />
-                <Route path="/hytter" element={<CabinsPage/>} />
-                <Route path="/hytter/:cabinId" element={<CabinInfoPage/>} />
-                <Route path="/leie-hytta" element={<OrderCabinPage/>} />
-                <Route path="/oversikt" element={<OrderOverviewPage/>} />
-                <Route path="/suksess" element={<SuccesPage/>} />
-                <Route path="/register" element={<RegisterPage/>} />
-                <Route path="/login" element={<LoginPage/>} />
+                <Route path="/hytter" element={<CabinsPage />} />
+                <Route path="/hytter/:cabinId" element={<CabinInfoPage />} />
+                <Route path="/leie-hytta" element={<OrderCabinPage />} />
+                <Route path="/oversikt" element={<OrderOverviewPage />} />
+                <Route path="/suksess" element={<SuccesPage />} />
+                {user ?
+                  null
+                  :
+                  <>
+                    <Route path="/register" element={<RegisterPage />} />
+                    <Route path="/login" element={<LoginPage />} />
+                  </>
+                }
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </div>
