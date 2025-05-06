@@ -64,8 +64,23 @@
 }
 
 @media screen and (max-width: 900px) {
-    .cabins-list {
+    .cp-description {
+        width: 70%;
+    }
+
+    .cabin-innhold {
+        flex-direction: column;
         width: 90%;
+        align-items: center;
+        gap: 0;
+    }
+
+    .cabin-filters {
+        width: 97%;
+    }
+
+    .cabins-list {
+        width: 100%;
         grid-template-columns: repeat(1, 1fr);
     }
 }

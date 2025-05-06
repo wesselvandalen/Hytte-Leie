@@ -25,7 +25,8 @@ export default function RegisterPage() {
                 window.location.assign('/');
             })
             .catch((error: any) => {
-                setNotificationMessage(error);
+                setNotificationMessage(error.message);
+                setShowNotification(true);
             })
     }
 
@@ -33,14 +34,16 @@ export default function RegisterPage() {
         e.preventDefault();
 
         if (!permission) {
-            window.alert('Du må akseptere vilkårene.');
+            setNotificationMessage("Du må akseptere vilkårene for å lage en konto.");
+            setShowNotification(true);
             return;
         }
 
         try {
             await registerWithGoogle();
-        } catch (error) {
-            console.warn(error);
+        } catch (error: any) {
+            setNotificationMessage(error.message);
+            setShowNotification(true);
         }
     };
 

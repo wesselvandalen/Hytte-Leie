@@ -28,7 +28,7 @@ export async function signInGoogle() {
 
     // Hvis brukeren ikke finnes
     if (!userDoc.exists() || !userDoc.data()) {
-        window.alert(`Brukeren finnes ikke`);
+        console.error("Brukeren finnes ikke.");
         return;
     } else {
         return user;

@@ -54,12 +54,6 @@ export default function Calendar({ props }: any) {
     return (
         <div className="calender-top">
             <div className="calender-container">
-                {showNotification && (
-                    <Notification
-                        message={notificationMessage}
-                        onClose={() => setShowNotification(false)}
-                    />
-                )}
                 <div className="calender-block">
                     <h3>Velg en startdato</h3>
                     <DatePicker
@@ -74,6 +68,12 @@ export default function Calendar({ props }: any) {
                         onChange={handleEndDateChange}
                     />
                 </div>
+                {showNotification && (
+                    <Notification
+                        message={notificationMessage}
+                        onClose={() => setShowNotification(false)}
+                    />
+                )}
             </div>
 
             <div className="calender-bottom">

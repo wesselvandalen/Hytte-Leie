@@ -87,3 +87,9 @@
     width: 16px;
     height: 16px;
 }
+
+@media screen and (max-width: 900px) {
+    .oc-content {
+        width: 90%;
+    }
+}

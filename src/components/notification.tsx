@@ -4,7 +4,7 @@ import './notification.css';
 const Notification = ({ message, onClose } : any) => {
 
     useEffect(() => {
-        const timeInSeconds = 4000; // 4 sekund
+        const timeInSeconds = 6000; // 6 sekund
         const timer = setTimeout(onClose, timeInSeconds);
         return () => clearTimeout(timer);
     }, [onClose]);

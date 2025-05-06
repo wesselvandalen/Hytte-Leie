@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './order-cabin-page.css';
+import Notification from '../components/notification';
 
 interface FormData {
     name: string;
@@ -23,6 +24,8 @@ export default function OrderCabinPage() {
         numberOfPeopleChildren: 0,
         numberOfPeoplePets: 0
     });
+    const [showNotification, setShowNotification] = useState(false);
+    const [notificationMessage, setNotificationMessage] = useState('');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -36,13 +39,15 @@ export default function OrderCabinPage() {
         e.preventDefault();
 
         if (formData.numberOfPeopleAdults < 1 || formData.numberOfPeopleChildren < 0 || formData.numberOfPeoplePets < 0) {
-            window.alert("Det må minst være én voksen, og det kan ikke være negative tall på barna eller kjæledyr.");
+            setNotificationMessage("Det må minst være én voksen, og det kan ikke være negative tall på barna eller kjæledyr.");
+            setShowNotification(true);
             return;
         }
 
         if (formData.name === '' || formData.address === '' || formData.email === '' || formData.phone === '') {
-            window.alert("Fyll inn personsdetaljene dine for å kunne fortsette.");
-            return;
+            setNotificationMessage("Fyll inn personsdetaljene dine for å kunne fortsette.");
+            setShowNotification(true);
+            return;            
         }
 
         sessionStorage.setItem("formdata", JSON.stringify(formData));
@@ -125,6 +130,13 @@ export default function OrderCabinPage() {
                             onChange={handleChange}
                         />
                     </div>
+
+                    {showNotification && (
+                        <Notification
+                            message={notificationMessage}
+                            onClose={() => setShowNotification(false)}
+                        />
+                    )}
 
                     <button type="submit" className="submit-button" onClick={handleSubmit}>
                         Gå til reserveringsoversikten

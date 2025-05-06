@@ -36,7 +36,7 @@ export default function Header() {
                 </div>
 
                 <a href="/" className='header-logo' style={{ color: aColor }}>
-                    Hytte Leie
+                    HytteLeie
                 </a>
 
                 <div className={`header-dock ${isMenuOpen ? 'open' : ''}`}>
