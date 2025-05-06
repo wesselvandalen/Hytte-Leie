@@ -11,6 +11,7 @@ import LoginPage from './pages/login-page.js';
 import OrderCabinPage from './pages/order-cabin-page.js';
 import OrderOverviewPage from './pages/order-overview-page.js';
 import SuccesPage from './pages/succes-page.js';
+import Footer from './components/footer.js';
 import { AuthContext } from './contexts/auth-context.js';
 import { useContext } from 'react';
 import { AuthContextType } from './model/auth-context.js';
@@ -34,6 +35,7 @@ export default function App() {
                 <Route path="/leie-hytta" element={<OrderCabinPage />} />
                 <Route path="/oversikt" element={<OrderOverviewPage />} />
                 <Route path="/suksess" element={<SuccesPage />} />
+
                 {user ?
                   null
                   :
@@ -42,10 +44,12 @@ export default function App() {
                     <Route path="/login" element={<LoginPage />} />
                   </>
                 }
+                
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </div>
 
+            <Footer />
           </div>
         </div>
       </div>

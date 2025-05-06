@@ -1,51 +1,62 @@
 import './home.css';
-import hytte from '../assets/hytte.png';
-import { useState } from 'react';
-import { Cabin } from '../model/cabin';
-import { findCabinsByLocation } from '../service/cabins-service';
+import background from '../assets/bakgrunn.jpg';
 
 export default function Home() {
-    const [recommendations, setRecommendations] = useState<Cabin[]>([]);
-
-    const handleSearchTermChange = (e: any) => setRecommendations(findCabinsByLocation(e.target.value));
 
     return (
         <div className="home-container">
-            <img src={hytte} alt="Bakgrunnsbilde av en skog." className='background-image' />
-            <div className="home-content">
-                <h3 className='home-title'>Hytte Leie – Finn din perfekte hytte i naturen</h3>
-                <p className='home-description'>Lei en koselig hytte i vakre omgivelser, fra skog til fjell. Enkel booking og unike opplevelser for ro og eventyr – alt på ett sted.</p>
 
-                <div className="searchbar">
-                    <input
-                        type="text"
-                        id='searchbar'
-                        placeholder="Finn din hytte her"
-                        onChange={handleSearchTermChange}
-                    />
-                    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 21L17.5001 17.5M20 11.5C20 16.1944 16.1944 20 11.5 20C6.80558 20 3 16.1944 3 11.5C3 6.80558 6.80558 3 11.5 3C16.1944 3 20 6.80558 20 11.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                </div>
+            <div className="home-section">
+                <img src={background} alt="Background" className="home-image" />
 
-                <div className="cabin-recommendations">
-                    {recommendations.map((cabin: Cabin, index: number) => {
-                        return <a
-                            href={`/hytter/${cabin.id}`}
-                            style={{
-                                borderTopLeftRadius: index === 0 ? '4px' : '0',
-                                borderTopRightRadius: index === 0 ? '4px' : '0',
-                                borderBottomLeftRadius: index === recommendations.length - 1 ? '4px' : '0',
-                                borderBottomRightRadius: index === recommendations.length - 1 ? '4px' : '0'
-                            }}
-                            key={index}
-                        >
-                            {cabin.title}, {cabin.location}
+                <div className="home-overlay">
+                    <h3>Gamle tradisjoner. Ny utsikt.</h3>
+                    <p>Vi henter det beste fra norsk byggeskikk og blander det med moderne komfort og estetikk – for deg som vil ha begge deler.</p>
+                    <div className="home-btns">
+                        <a href="/hytter" className='hytte-btn'>Sjekk ut hyttene </a>
+                        <a href="/omoss" className='omoss-btn'>
+                            Lær mer om oss
+                            <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
                         </a>
-                    })}
+                    </div>
                 </div>
-
             </div>
+
+            <div className="hero-section">
+                <div className="hero-content">
+                    
+                    <div className="perk-box">
+                        <h3>20+</h3>
+                        <p>år<br/>erfaring</p>
+                    </div>
+
+                    <p className='perks-stripe'>|</p>
+
+                    <div className="perk-box">
+                        <h3>8</h3>
+                        <p>Fantastiske<br/>hytter</p>
+                    </div>
+
+                    <p className='perks-stripe'>|</p>
+
+                    <div className="perk-box">
+                        <h3>10K+</h3>
+                        <p>Fornøyde<br/>kunder</p>
+                    </div>
+
+                    <p className='perks-stripe'>|</p>
+
+                    <div className="perk-box">
+                        <h3>4.7</h3>
+                        <p>Gjennomsnittlig<br/>anmeldelse</p>
+                    </div>
+
+                </div>
+            </div>
+
+            
         </div>
     );
 }

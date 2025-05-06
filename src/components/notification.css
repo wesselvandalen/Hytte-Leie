@@ -1,12 +1,12 @@
 .notification-popup {
     background-color: #fff1f176;
-    color: #5d1414;
+    color: #560404;
     width: 95%;
     margin: 0;
     padding: 8px 10px;
     border-radius: 5px;
     border: #5a070722 solid 1px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
     animation: popup 0.7s;
 }

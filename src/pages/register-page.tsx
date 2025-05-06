@@ -2,17 +2,21 @@ import './auth-page.css';
 import { useState } from 'react';
 import googleIcon from '../assets/icons/google.png';
 import { registerWithGoogle, signUpEmailAndPassword } from '../service/auth-service';
+import Notification from '../components/notification';
 
 export default function RegisterPage() {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [permission, setPermission] = useState<boolean>(false);
+    const [showNotification, setShowNotification] = useState(false);
+    const [notificationMessage, setNotificationMessage] = useState('');
 
     function handleRegister(e: any) {
         e.preventDefault();
 
         if (!permission) {
-            window.alert('Du må akseptere vilkårene.');
+            setNotificationMessage("Du må akseptere vilkårene for å lage en konto.");
+            setShowNotification(true);
             return;
         }
 
@@ -21,7 +25,7 @@ export default function RegisterPage() {
                 window.location.assign('/');
             })
             .catch((error: any) => {
-                console.warn(error);
+                setNotificationMessage(error);
             })
     }
 
@@ -79,6 +83,13 @@ export default function RegisterPage() {
                         <input type="checkbox" className="input-checkbox" onChange={handlePermissionChange} />
                         <span>Ved å registrere deg bekrefter du at du har lest og akseptert <a className="terms-a" href="/vilkår" target="_blank">våre vilkår og betingelser</a>.</span>
                     </div>
+
+                    {showNotification && (
+                        <Notification
+                            message={notificationMessage}
+                            onClose={() => setShowNotification(false)}
+                        />
+                    )}
 
                     <button className="auth-button" type="submit">Registrer deg</button>
 

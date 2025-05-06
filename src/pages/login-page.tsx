@@ -2,10 +2,13 @@ import './auth-page.css';
 import { useState } from 'react';
 import { signInGoogle, signInEmailAndPassword } from '../service/auth-service';
 import googleIcon from '../assets/icons/google.png';
+import Notification from '../components/notification';
 
 export default function LoginPage() {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const [showNotification, setShowNotification] = useState(false);
+    const [notificationMessage, setNotificationMessage] = useState('');
 
     async function handleLoginEmail(e: any) {
         e.preventDefault();
@@ -13,8 +16,9 @@ export default function LoginPage() {
         try {
             await signInEmailAndPassword(email, password);
             window.location.assign("/");
-        } catch (error) {
-            console.warn(error);
+        } catch (error: any) {
+            setNotificationMessage(error.message);
+            setShowNotification(true);
         }
     }
 
@@ -24,8 +28,9 @@ export default function LoginPage() {
         try {
             await signInGoogle();
             window.location.assign('/');
-        } catch (error) {
-            console.warn(error);
+        } catch (error: any) {
+            setNotificationMessage(error);
+            setShowNotification(true);
         }
     };
 
@@ -61,6 +66,13 @@ export default function LoginPage() {
                         required
                         onChange={(e) => setPassword(e.target.value)}
                     />
+
+                    {showNotification && (
+                        <Notification
+                            message={notificationMessage}
+                            onClose={() => setShowNotification(false)}
+                        />
+                    )}
 
                     <button className="auth-button" type="submit">Logg på</button>
 
