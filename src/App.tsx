@@ -8,16 +8,23 @@ import CabinsPage from './pages/cabins-page.js';
 import CabinInfoPage from './pages/cabin-info-page.js';
 import RegisterPage from './pages/register-page.js';
 import LoginPage from './pages/login-page.js';
-import OrderCabinPage from './pages/order-cabin-page.js';
-import OrderOverviewPage from './pages/order-overview-page.js';
 import SuccesPage from './pages/succes-page.js';
 import Footer from './components/footer.js';
 import { AuthContext } from './contexts/auth-context.js';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AuthContextType } from './model/auth-context.js';
+import CheckoutPage from './pages/checkout-page.js';
 
 export default function App() {
   const { user } = useContext(AuthContext) as AuthContextType;
+
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  }, []);
 
   return (
     <Router>
@@ -32,9 +39,8 @@ export default function App() {
                 <Route path="/omoss" element={<AboutPage />} />
                 <Route path="/hytter" element={<CabinsPage />} />
                 <Route path="/hytter/:cabinId" element={<CabinInfoPage />} />
-                <Route path="/leie-hytta" element={<OrderCabinPage />} />
-                <Route path="/oversikt" element={<OrderOverviewPage />} />
                 <Route path="/suksess" element={<SuccesPage />} />
+                <Route path="/kassen" element={<CheckoutPage />} />
 
                 {user ?
                   null
@@ -44,7 +50,7 @@ export default function App() {
                     <Route path="/login" element={<LoginPage />} />
                   </>
                 }
-                
+
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </div>

@@ -48,7 +48,7 @@ export default function Calendar({ props }: any) {
 
         sessionStorage.setItem("datums", JSON.stringify({ startDate, endDate, 'pricePerNight': props.pricePerNight, 'numberOfDays': calculateDaysBetweenDates() }));
         sessionStorage.setItem("cabinId", props.id);
-        window.location.assign("/leie-hytta");
+        window.location.assign("/kassen");
     }
 
     return (

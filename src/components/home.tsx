@@ -2,7 +2,6 @@ import './home.css';
 import background from '../assets/bakgrunn.jpg';
 
 export default function Home() {
-
     return (
         <div className="home-container">
 

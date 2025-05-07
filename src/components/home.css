@@ -142,8 +142,9 @@
 .hero-content {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
+    max-width: 1400px;
 }
 
 .perks-stripe {
